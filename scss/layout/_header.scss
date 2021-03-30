@@ -1,0 +1,17 @@
+@use './../abstracts/' as *;
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  width: 100%;
+  padding: 1rem 0;
+  & > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    color: $lightColor;
+  }
+}

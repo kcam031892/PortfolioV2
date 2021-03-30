@@ -1,0 +1,13 @@
+@use './../abstracts/' as *;
+.toggle-bar {
+  cursor: pointer;
+  span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: $lightColor;
+    &:not(:last-child) {
+      margin-bottom: rem(6);
+    }
+  }
+}

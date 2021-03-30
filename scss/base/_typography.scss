@@ -1,0 +1,17 @@
+@use './../abstracts/' as *;
+h1 {
+  &.contact-heading {
+    color: $secondaryColor;
+  }
+}
+
+p {
+  &.contact-detail {
+    color: $grayColor;
+    margin: rem(3);
+  }
+}
+
+.text-secondary {
+  color: $secondaryColor;
+}

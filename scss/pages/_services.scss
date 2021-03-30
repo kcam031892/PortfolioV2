@@ -1,0 +1,32 @@
+@use './../abstracts/' as *;
+.services {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem 0;
+    @include breakpoint(mobile) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &-item {
+      box-shadow: $boxShadow;
+      border-radius: 8px;
+      text-align: center;
+      padding: 1rem;
+      i {
+        font-size: rem(100);
+      }
+      h1 {
+        color: $secondaryColor;
+        margin-top: 1rem;
+      }
+      p {
+        font-size: 0.95rem;
+        color: $grayColor;
+        height: rem(60);
+        max-height: rem(60);
+        overflow: hidden;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+$fontWeight: (
+  'bold': 700,
+  'regular': 400,
+  'light': 300,
+);
+
+@mixin breakpoint($device) {
+  @if $device == desktop {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  } @else if $device == tablet {
+    @media (min-width: 768px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $device == tabletLandscape {
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $device == lowResTablet {
+    @media (min-width: 481px) and (max-width: 767px) {
+      @content;
+    }
+  } @else if $device == mobile {
+    @media (min-width: 320px) and (max-width: 480px) {
+      @content;
+    }
+  }
+}

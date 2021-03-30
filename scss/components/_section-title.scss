@@ -1,0 +1,13 @@
+@use './../abstracts/' as *;
+.section-title {
+  font-size: rem(36);
+  text-align: center;
+  color: $primaryColor;
+  margin-bottom: $spaceY;
+  &.text-light {
+    color: $lightColor;
+  }
+  @include breakpoint(mobile) {
+    font-size: 1.75rem;
+  }
+}

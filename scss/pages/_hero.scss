@@ -1,0 +1,146 @@
+@use './../abstracts/' as *;
+.hero {
+  background: linear-gradient(45deg, $primaryColor, $primaryColorLighten);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::before {
+    content: '';
+    background-color: #fff;
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    clip-path: polygon(100% 25.5%, 0 97%, 0% 100%, 100% 100%);
+  }
+
+  @include breakpoint(mobile) {
+    padding: 6rem 0 3rem;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
+    &::before {
+      content: none;
+    }
+  }
+  @include breakpoint(tablet) {
+    padding: 6rem 0 3rem;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 70vh;
+  }
+  @include breakpoint(tabletLandscape) {
+    padding: 6rem 0 3rem;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  &__content {
+    position: absolute;
+    left: 150px;
+    h1 {
+      font-size: 2.5rem;
+      color: $lightColor;
+      line-height: 1;
+    }
+    p {
+      color: $lightColor;
+      margin: 1rem 0;
+    }
+    @include breakpoint(mobile) {
+      position: static;
+      order: 2;
+      margin-top: 1rem;
+      h1 {
+        font-size: 1.75rem;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    }
+    @include breakpoint(tablet) {
+      position: static;
+      order: 2;
+      margin-top: 1rem;
+      h1 {
+        font-size: 1.75rem;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    }
+
+    // position: absolute;
+    // left: 20px;
+  }
+  &__ctx {
+    background-color: #3a3e60;
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    color: $lightColor;
+    border-radius: rem(8);
+    width: rem(260);
+    text-align: center;
+    box-shadow: 2px 6px 8px rgba(13, 15, 23, 0.3);
+    @include breakpoint(mobile) {
+      width: 100%;
+    }
+  }
+  &__image {
+    position: absolute;
+    bottom: 80px;
+    right: 150px;
+    height: rem(440);
+    width: rem(300);
+    z-index: -1;
+
+    @include breakpoint(mobile) {
+      position: static;
+      height: 300px;
+      width: 300px;
+
+      order: 1;
+    }
+    @include breakpoint(tablet) {
+      position: static;
+      height: 300px;
+      width: 300px;
+
+      order: 1;
+    }
+  }
+  &__social {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: rem(70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include breakpoint(mobile) {
+      display: none;
+    }
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 0.75rem;
+    }
+  }
+  &__link {
+    i {
+      color: $lightColor;
+      font-size: rem(26);
+    }
+  }
+}

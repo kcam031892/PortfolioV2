@@ -1,0 +1,14 @@
+@use './../abstracts/' as *;
+.footer {
+  padding: $spaceY 2rem;
+  background-color: #232323;
+  color: #fff;
+
+  &__heading {
+    text-align: center;
+    font-size: 1.25rem;
+    @include breakpoint(mobile) {
+      font-size: 1rem;
+    }
+  }
+}
