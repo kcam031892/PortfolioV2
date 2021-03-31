@@ -1,3 +1,55 @@
+@use './../abstracts/' as *;
 .nav {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  background-color: $primaryColorLighten;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+  transition: all 0.4s linear;
+  &__item {
+    text-align: center;
+    margin-bottom: 1rem;
+    // padding-bottom: 1rem;
+  }
+  &__link {
+    position: relative;
+    color: $lightColor;
+    font-size: 2rem;
+    padding-bottom: 0.25rem;
+    outline: 0;
+    ::-moz-focus-inner {
+      border: 0;
+    }
+
+    width: 100%;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 3px;
+      background-color: $secondaryColor;
+      transition: 0.2s ease-in-out;
+    }
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+    &:focus {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+  &.active {
+    left: 0;
+    transition: all 0.2s linear;
+  }
 }

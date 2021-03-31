@@ -3,9 +3,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 15;
   width: 100%;
   padding: 1rem 0;
+  z-index: 9999;
+
   & > .container {
     display: flex;
     justify-content: space-between;
@@ -13,5 +14,11 @@
   }
   &__title {
     color: $lightColor;
+    z-index: 9999;
+  }
+  &.sticky {
+    position: fixed;
+    background-color: $primaryColorLighten;
+    transition: all 0.3s ease-in-out;
   }
 }

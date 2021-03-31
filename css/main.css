@@ -1,3 +1,19 @@
+@-webkit-keyframes lineMove {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes lineMove {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -38,6 +54,11 @@ section {
   background-color: #2b2e4a;
 }
 
+.fixed-height {
+  max-height: 100vh !important;
+  overflow: hidden;
+}
+
 h1.contact-heading {
   color: #e84545;
 }
@@ -55,9 +76,9 @@ p.contact-detail {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 15;
   width: 100%;
   padding: 1rem 0;
+  z-index: 9999;
 }
 .header > .container {
   display: flex;
@@ -66,10 +87,61 @@ p.contact-detail {
 }
 .header__title {
   color: #eee;
+  z-index: 9999;
+}
+.header.sticky {
+  position: fixed;
+  background-color: #3e426a;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  background-color: #3e426a;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+  transition: all 0.4s linear;
+}
+.nav__item {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.nav__link {
+  position: relative;
+  color: #eee;
+  font-size: 2rem;
+  padding-bottom: 0.25rem;
+  outline: 0;
+  width: 100%;
+}
+.nav__link ::-moz-focus-inner {
+  border: 0;
+}
+.nav__link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #e84545;
+  transition: 0.2s ease-in-out;
+}
+.nav__link:hover::before {
+  width: 100%;
+}
+.nav__link:focus::before {
+  width: 100%;
+}
+.nav.active {
+  left: 0;
+  transition: all 0.2s linear;
 }
 
 .footer {
@@ -96,6 +168,7 @@ p.contact-detail {
 
 .toggle-bar {
   cursor: pointer;
+  z-index: 20;
 }
 .toggle-bar span {
   display: block;
@@ -105,6 +178,34 @@ p.contact-detail {
 }
 .toggle-bar span:not(:last-child) {
   margin-bottom: 0.375rem;
+}
+.toggle-bar.active span {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  overflow: hidden;
+  background-color: transparent;
+  margin-top: 0.5rem;
+}
+.toggle-bar.active span:not(:first-child) {
+  display: none;
+}
+.toggle-bar.active span::before, .toggle-bar.active span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+  background-color: #eee;
+}
+.toggle-bar.active span:before {
+  transform: rotate(45deg);
+}
+.toggle-bar.active span:after {
+  transform: rotate(-45deg);
 }
 
 .section-title {
@@ -129,14 +230,30 @@ p.contact-detail {
   cursor: pointer;
   outline: none;
   border: none;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid transparent;
 }
 .btn.btn-primary {
+  --bg-color: #903749;
   background-color: #903749;
   color: #eee;
 }
 .btn.btn-secondary {
+  --bg-color: #53354a;
   background-color: #53354a;
   color: #eee;
+}
+.btn:hover {
+  transform: scale(0.9);
+  background-color: transparent;
+  border: 2px solid var(--bg-color);
+  color: #333;
+}
+.btn:focus {
+  transform: scale(0.9);
+  background-color: transparent;
+  border: 2px solid var(--bg-color);
+  color: #333;
 }
 
 .hero {
@@ -239,6 +356,19 @@ p.contact-detail {
   width: 16.25rem;
   text-align: center;
   box-shadow: 2px 6px 8px rgba(13, 15, 23, 0.3);
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
+}
+.hero__ctx:hover {
+  transform: scale(0.9);
+  background-color: transparent;
+  border: 1px solid #eee;
+}
+.hero__ctx:focus {
+  transform: scale(0.9);
+  border: 1px solid #eee;
+  outline: none;
+  background-color: transparent;
 }
 @media (min-width: 320px) and (max-width: 480px) {
   .hero__ctx {
@@ -284,6 +414,13 @@ p.contact-detail {
     display: none;
   }
 }
+.hero__link i {
+  transition: all 0.1s ease-in-out;
+}
+.hero__link i:hover {
+  transform: scale(0.9);
+  color: #e84545;
+}
 .hero__item:not(:last-child) {
   margin-bottom: 0.75rem;
 }
@@ -308,9 +445,11 @@ p.contact-detail {
   border-radius: 8px;
   text-align: center;
   padding: 1rem;
+  transition: all 0.2s ease-in-out;
 }
-.services .grid-item i {
-  font-size: 6.25rem;
+.services .grid-item img {
+  width: 6.25rem;
+  transition: all 0.2s ease-in-out;
 }
 .services .grid-item h1 {
   color: #e84545;
@@ -322,6 +461,14 @@ p.contact-detail {
   height: 3.75rem;
   max-height: 3.75rem;
   overflow: hidden;
+}
+.services .grid-item:hover {
+  transform: scale(0.9);
+}
+@media (min-width: 1025px) {
+  .services .grid-item:hover img {
+    transform: translateY(-50%);
+  }
 }
 
 .skills .grid {
@@ -335,7 +482,7 @@ p.contact-detail {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-.skills .grid h1 {
+.skills .grid button {
   width: 100%;
   padding: 0.5rem;
   border-radius: 8px;
@@ -346,6 +493,11 @@ p.contact-detail {
   font-size: 1rem;
   font-weight: 700;
   text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.skills .grid button:hover {
+  transform: scale(0.9);
 }
 
 .works .grid {

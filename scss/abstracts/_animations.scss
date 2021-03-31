@@ -1,0 +1,10 @@
+$animateScale: scale(0.9);
+
+@keyframes lineMove {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

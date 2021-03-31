@@ -8,13 +8,18 @@
     @include breakpoint(mobile) {
       grid-template-columns: repeat(1, 1fr);
     }
+
     &-item {
       box-shadow: $boxShadow;
       border-radius: 8px;
       text-align: center;
       padding: 1rem;
-      i {
-        font-size: rem(100);
+      transition: all 0.2s ease-in-out;
+
+      img {
+        width: rem(100);
+
+        transition: all 0.2s ease-in-out;
       }
       h1 {
         color: $secondaryColor;
@@ -26,6 +31,14 @@
         height: rem(60);
         max-height: rem(60);
         overflow: hidden;
+      }
+      &:hover {
+        transform: scale(0.9);
+        img {
+          @include breakpoint(desktop) {
+            transform: translateY(-50%);
+          }
+        }
       }
     }
   }

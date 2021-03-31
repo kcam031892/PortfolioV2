@@ -2,3 +2,8 @@
 .bg-primary {
   background-color: $primaryColor;
 }
+
+.fixed-height {
+  max-height: 100vh !important;
+  overflow: hidden;
+}

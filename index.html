@@ -18,7 +18,7 @@
   <header class="header">
     <div class="container">
       <h1 class="header__title">Marck Henroe</h1>
-      <div class="toggle-bar">
+      <div class="toggle-bar ">
         <span></span>
         <span></span>
         <span></span>
@@ -26,10 +26,10 @@
       <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Services</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Skills</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Works</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+          <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+          <li class="nav__item"><a href="#works" class="nav__link">Works</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -54,76 +54,77 @@
       <img src="images/profile-low-opacity.png" alt="My Profile Picture" class="hero__image">
     </section>
     <!-- Services -->
-    <section class="services">
+    <section class="services" id="services">
       <div class="container">
 
         <h1 class="section-title">Things I'm doing...</h1>
         <div class="grid">
           <div class="grid-item">
-            <i class="fab fa-facebook"></i>
+
+            <img src="/images/seo.svg" alt="">
             <h1>Web Development</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, eum.</p>
           </div>
           <div class="grid-item">
-            <i class="fab fa-facebook"></i>
-            <h1>Web Development</h1>
+            <img src="/images/web-design.svg" alt="">
+            <h1>Web Design</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, eum.</p>
           </div>
           <div class="grid-item">
-            <i class="fab fa-facebook"></i>
-            <h1>Web Development</h1>
+            <img src="/images/server.svg" alt="">
+            <h1>Web Hosting</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, eum.</p>
           </div>
         </div>
       </div>
     </section>
     <!-- Skills -->
-    <section class="skills bg-primary">
+    <section class="skills bg-primary" id="skills">
       <div class="container">
         <h1 class="section-title text-light">What I'm good at...</h1>
         <div class="grid">
           <div class="grid-item">
-            <h1>HTML</h1>
+            <button>HTML</button>
           </div>
           <div class="grid-item">
-            <h1>CSS</h1>
+            <button>CSS</button>
           </div>
           <div class="grid-item">
-            <h1>SCSS</h1>
+            <button>SCSS</button>
           </div>
           <div class="grid-item">
-            <h1>Javascript</h1>
+            <button>Javascript</button>
           </div>
           <div class="grid-item">
-            <h1>TypeScript</h1>
+            <button>TypeScript</button>
           </div>
           <div class="grid-item">
-            <h1>PHP</h1>
+            <button>PHP</button>
           </div>
           <div class="grid-item">
-            <h1>Laravel</h1>
+            <button>Laravel</button>
           </div>
           <div class="grid-item">
-            <h1>ReactJS</h1>
+            <button>ReactJS</button>
           </div>
           <div class="grid-item">
-            <h1>NodeJS</h1>
+            <button>NodeJS</button>
           </div>
           <div class="grid-item">
-            <h1>MySQL</h1>
+            <button>MySQL</button>
           </div>
           <div class="grid-item">
-            <h1>MongoDB</h1>
+            <button>MongoDB</button>
           </div>
           <div class="grid-item">
-            <h1>Docker</h1>
+            <button>Docker</button>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Works -->
-    <section class="works">
+    <section class="works" id="works">
       <div class="container">
         <h1 class="section-title">My Works...</h1>
         <div class="grid">
@@ -166,7 +167,7 @@
     </section>
 
     <!-- Contact -->
-    <section class="contact bg-primary">
+    <section class="contact bg-primary" id="contact">
       <div class="container">
         <h1 class="section-title text-light">Get in Touch...</h1>
         <div class="contact__content">
@@ -197,6 +198,7 @@
 
   </footer>
 
+  <script src="dist/main.js"></script>
 </body>
 
 </html>

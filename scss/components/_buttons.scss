@@ -1,18 +1,36 @@
 @use './../abstracts/' as *;
 .btn {
   padding: 0.75rem 2rem;
-
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
   outline: none;
   border: none;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid transparent;
+
   &.btn-primary {
+    --bg-color: #903749;
     background-color: $accentColor;
     color: $lightColor;
   }
   &.btn-secondary {
+    --bg-color: #53354a;
     background-color: $accentColor2;
     color: $lightColor;
+  }
+  &:hover {
+    transform: $animateScale;
+    background-color: transparent;
+    border: 2px solid var(--bg-color);
+
+    color: #333;
+  }
+  &:focus {
+    transform: $animateScale;
+    background-color: transparent;
+    border: 2px solid var(--bg-color);
+
+    color: #333;
   }
 }
