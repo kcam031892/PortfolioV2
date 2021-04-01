@@ -2,17 +2,21 @@
 .works {
   .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
     gap: 1rem;
     padding: 1rem 0;
-    place-items: center;
+
     @include breakpoint(mobile) {
       grid-template-columns: repeat(1, 1fr);
     }
 
     &-item {
       box-shadow: $boxShadow;
-      margin: auto;
+    }
+    img {
+      height: 450px;
+      width: 100%;
     }
     &-content {
       padding: 1.25rem 1rem;
@@ -24,6 +28,10 @@
       p {
         color: $grayColor;
         font-size: 0.95rem;
+        min-height: 50px;
+        overflow: hidden;
+        width: 100%;
+        text-align: center;
       }
       .links {
         display: flex;

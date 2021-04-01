@@ -84,7 +84,6 @@
     // left: 20px;
   }
   &__ctx {
-    background-color: #3a3e60;
     display: inline-block;
     padding: 0.75rem 2rem;
     color: $lightColor;
@@ -93,19 +92,38 @@
     text-align: center;
     box-shadow: 2px 6px 8px rgba(13, 15, 23, 0.3);
     transition: all 0.2s ease-in-out;
-    border: 1px solid transparent;
+
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 10px;
+      height: 100%;
+      background-color: $secondaryColor;
+      border-radius: rem(8);
+      z-index: -1;
+      transition: all 0.4s ease-in-out;
+    }
 
     &:hover {
       transform: $animateScale;
       background-color: transparent;
-      border: 1px solid $lightColor;
+
+      &::before {
+        width: 100%;
+      }
     }
     &:focus {
       transform: $animateScale;
-      border: 1px solid $lightColor;
+
       // box-shadow: 0 0 0 1px $lightColor;
       outline: none;
       background-color: transparent;
+      &::before {
+        width: 100%;
+      }
     }
 
     @include breakpoint(mobile) {
@@ -145,12 +163,14 @@
     justify-content: center;
     align-items: center;
     @include breakpoint(mobile) {
-      display: none;
+      left: -10px;
     }
   }
   &__link {
+    outline: none;
     i {
       transition: all 0.1s ease-in-out;
+
       &:hover {
         transform: $animateScale;
         color: $secondaryColor;
