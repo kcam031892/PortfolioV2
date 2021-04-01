@@ -2,18 +2,22 @@
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
 }
+
 @keyframes lineMove {
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -80,15 +84,18 @@ p.contact-detail {
   padding: 1rem 0;
   z-index: 9999;
 }
-.header > .container {
+
+.header>.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .header__title {
   color: #eee;
   z-index: 9999;
 }
+
 .header.sticky {
   position: fixed;
   background-color: #3e426a;
@@ -108,10 +115,12 @@ p.contact-detail {
   z-index: 15;
   transition: all 0.4s linear;
 }
+
 .nav__item {
   text-align: center;
   margin-bottom: 1rem;
 }
+
 .nav__link {
   position: relative;
   color: #eee;
@@ -120,9 +129,11 @@ p.contact-detail {
   outline: 0;
   width: 100%;
 }
+
 .nav__link ::-moz-focus-inner {
   border: 0;
 }
+
 .nav__link::before {
   content: "";
   position: absolute;
@@ -133,12 +144,15 @@ p.contact-detail {
   background-color: #e84545;
   transition: 0.2s ease-in-out;
 }
+
 .nav__link:hover::before {
   width: 100%;
 }
+
 .nav__link:focus::before {
   width: 100%;
 }
+
 .nav.active {
   left: 0;
   transition: all 0.2s linear;
@@ -149,10 +163,12 @@ p.contact-detail {
   background-color: #232323;
   color: #fff;
 }
+
 .footer__heading {
   text-align: center;
   font-size: 1.25rem;
 }
+
 @media (max-width: 480px) {
   .footer__heading {
     font-size: 1rem;
@@ -170,15 +186,18 @@ p.contact-detail {
   cursor: pointer;
   z-index: 20;
 }
+
 .toggle-bar span {
   display: block;
   width: 30px;
   height: 3px;
   background-color: #eee;
 }
+
 .toggle-bar span:not(:last-child) {
   margin-bottom: 0.375rem;
 }
+
 .toggle-bar.active span {
   position: relative;
   display: inline-block;
@@ -188,10 +207,13 @@ p.contact-detail {
   background-color: transparent;
   margin-top: 0.5rem;
 }
+
 .toggle-bar.active span:not(:first-child) {
   display: none;
 }
-.toggle-bar.active span::before, .toggle-bar.active span::after {
+
+.toggle-bar.active span::before,
+.toggle-bar.active span::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -201,9 +223,11 @@ p.contact-detail {
   margin-top: -1px;
   background-color: #eee;
 }
+
 .toggle-bar.active span:before {
   transform: rotate(45deg);
 }
+
 .toggle-bar.active span:after {
   transform: rotate(-45deg);
 }
@@ -214,9 +238,11 @@ p.contact-detail {
   color: #2b2e4a;
   margin-bottom: 2.5rem;
 }
+
 .section-title.text-light {
   color: #eee;
 }
+
 @media (max-width: 480px) {
   .section-title {
     font-size: 1.75rem;
@@ -233,22 +259,26 @@ p.contact-detail {
   transition: all 0.2s ease-in-out;
   border: 2px solid transparent;
 }
+
 .btn.btn-primary {
   --bg-color: #903749;
   background-color: #903749;
   color: #eee;
 }
+
 .btn.btn-secondary {
   --bg-color: #53354a;
   background-color: #53354a;
   color: #eee;
 }
+
 .btn:hover {
   transform: scale(0.9);
   background-color: transparent;
   border: 2px solid var(--bg-color);
   color: #333;
 }
+
 .btn:focus {
   transform: scale(0.9);
   background-color: transparent;
@@ -257,7 +287,7 @@ p.contact-detail {
 }
 
 .hero {
-  background: url("/images/bubbles.svg") no-repeat center center/cover, linear-gradient(45deg, #2b2e4a, #3e426a);
+  background: url("./../images/bubbles.svg") no-repeat center center/cover, linear-gradient(45deg, #2b2e4a, #3e426a);
   position: relative;
   width: 100%;
   height: 100vh;
@@ -268,6 +298,7 @@ p.contact-detail {
   justify-content: center;
   align-items: center;
 }
+
 .hero::before {
   content: "";
   background-color: #fff;
@@ -277,8 +308,9 @@ p.contact-detail {
   left: 0;
   bottom: 0;
   -webkit-clip-path: polygon(100% 25.5%, 0 97%, 0% 100%, 100% 100%);
-          clip-path: polygon(100% 25.5%, 0 97%, 0% 100%, 100% 100%);
+  clip-path: polygon(100% 25.5%, 0 97%, 0% 100%, 100% 100%);
 }
+
 @media (max-width: 480px) {
   .hero {
     padding: 6rem 0 3rem;
@@ -286,10 +318,12 @@ p.contact-detail {
     flex-direction: column;
     height: 100%;
   }
+
   .hero::before {
     content: none;
   }
 }
+
 @media (min-width: 481px) and (max-width: 767px) {
   .hero {
     padding: 6rem 0 3rem;
@@ -297,10 +331,12 @@ p.contact-detail {
     flex-direction: column;
     height: 100%;
   }
+
   .hero::before {
     content: none;
   }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .hero {
     padding: 6rem 0 3rem;
@@ -309,6 +345,7 @@ p.contact-detail {
     height: 70vh;
   }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .hero {
     padding: 6rem 0 3rem;
@@ -317,61 +354,74 @@ p.contact-detail {
     height: 100vh;
   }
 }
+
 .hero__content {
   position: absolute;
   left: 150px;
 }
+
 .hero__content h1 {
   font-size: 2.5rem;
   color: #eee;
   line-height: 1;
 }
+
 .hero__content p {
   color: #eee;
   margin: 1rem 0;
 }
+
 @media (max-width: 480px) {
   .hero__content {
     position: static;
     order: 2;
     margin-top: 1rem;
   }
+
   .hero__content h1 {
     font-size: 1.75rem;
     text-align: center;
   }
+
   .hero__content p {
     text-align: center;
   }
 }
+
 @media (min-width: 481px) and (max-width: 767px) {
   .hero__content {
     position: static;
     order: 2;
     margin-top: 1rem;
   }
+
   .hero__content h1 {
     font-size: 1.75rem;
     text-align: center;
   }
+
   .hero__content p {
     text-align: center;
   }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .hero__content {
     position: static;
     order: 2;
     margin-top: 1rem;
   }
+
   .hero__content h1 {
     font-size: 1.75rem;
     text-align: center;
   }
+
   .hero__content p {
     text-align: center;
   }
 }
+
 .hero__ctx {
   display: inline-block;
   padding: 0.75rem 2rem;
@@ -383,6 +433,7 @@ p.contact-detail {
   transition: all 0.2s ease-in-out;
   position: relative;
 }
+
 .hero__ctx::before {
   content: "";
   position: absolute;
@@ -395,31 +446,38 @@ p.contact-detail {
   z-index: -1;
   transition: all 0.4s ease-in-out;
 }
+
 .hero__ctx:hover {
   transform: scale(0.9);
   background-color: transparent;
 }
+
 .hero__ctx:hover::before {
   width: 100%;
 }
+
 .hero__ctx:focus {
   transform: scale(0.9);
   outline: none;
   background-color: transparent;
 }
+
 .hero__ctx:focus::before {
   width: 100%;
 }
+
 @media (max-width: 480px) {
   .hero__ctx {
     width: 100%;
   }
 }
+
 @media (min-width: 481px) and (max-width: 767px) {
   .hero__ctx {
     width: 100%;
   }
 }
+
 .hero__image {
   position: absolute;
   bottom: 80px;
@@ -428,6 +486,7 @@ p.contact-detail {
   width: 18.75rem;
   z-index: -1;
 }
+
 @media (max-width: 480px) {
   .hero__image {
     position: static;
@@ -436,6 +495,7 @@ p.contact-detail {
     order: 1;
   }
 }
+
 @media (min-width: 481px) and (max-width: 767px) {
   .hero__image {
     position: static;
@@ -444,6 +504,7 @@ p.contact-detail {
     order: 1;
   }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
   .hero__image {
     position: static;
@@ -452,6 +513,7 @@ p.contact-detail {
     order: 1;
   }
 }
+
 .hero__social {
   position: absolute;
   left: 0;
@@ -462,24 +524,30 @@ p.contact-detail {
   justify-content: center;
   align-items: center;
 }
+
 @media (max-width: 480px) {
   .hero__social {
     left: -10px;
   }
 }
+
 .hero__link {
   outline: none;
 }
+
 .hero__link i {
   transition: all 0.1s ease-in-out;
 }
+
 .hero__link i:hover {
   transform: scale(0.9);
   color: #e84545;
 }
+
 .hero__item:not(:last-child) {
   margin-bottom: 0.75rem;
 }
+
 .hero__link i {
   color: #eee;
   font-size: 1.625rem;
@@ -491,16 +559,19 @@ p.contact-detail {
   gap: 1rem;
   padding: 1rem 0;
 }
+
 @media (max-width: 480px) {
   .services .grid {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
 @media (min-width: 481px) and (max-width: 767px) {
   .services .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 .services .grid-item {
   box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
@@ -508,14 +579,17 @@ p.contact-detail {
   padding: 1rem;
   transition: all 0.2s ease-in-out;
 }
+
 .services .grid-item img {
   width: 6.25rem;
   transition: all 0.2s ease-in-out;
 }
+
 .services .grid-item h1 {
   color: #e84545;
   margin-top: 1rem;
 }
+
 .services .grid-item p {
   font-size: 0.95rem;
   color: #707070;
@@ -523,9 +597,11 @@ p.contact-detail {
   max-height: 3.75rem;
   overflow: hidden;
 }
+
 .services .grid-item:hover {
   transform: scale(0.9);
 }
+
 @media (min-width: 1025px) {
   .services .grid-item:hover img {
     transform: translateY(-50%);
@@ -538,16 +614,19 @@ p.contact-detail {
   grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
 }
+
 @media (max-width: 480px) {
   .skills .grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 @media (min-width: 481px) and (max-width: 767px) {
   .skills .grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 .skills .grid button {
   width: 100%;
   padding: 0.5rem;
@@ -562,6 +641,7 @@ p.contact-detail {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
+
 .skills .grid button:hover {
   transform: scale(0.9);
 }
@@ -572,31 +652,38 @@ p.contact-detail {
   gap: 1rem;
   padding: 1rem 0;
 }
+
 @media (max-width: 480px) {
   .works .grid {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
 @media (min-width: 481px) and (max-width: 767px) {
   .works .grid {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
 .works .grid-item {
   box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.3);
 }
+
 .works .grid img {
   height: 450px;
   width: 100%;
 }
+
 .works .grid-content {
   padding: 1.25rem 1rem;
 }
+
 .works .grid-content h1 {
   text-align: center;
   font-size: 1.5rem;
   color: #e84545;
 }
+
 .works .grid-content p {
   color: #707070;
   font-size: 0.95rem;
@@ -605,6 +692,7 @@ p.contact-detail {
   width: 100%;
   text-align: center;
 }
+
 .works .grid-content .links {
   display: flex;
   justify-content: center;
@@ -612,6 +700,7 @@ p.contact-detail {
   gap: 1rem;
   margin-top: 1rem;
 }
+
 @media (min-width: 1025px) {
   .works .grid-content .links a {
     width: 200px;
@@ -628,12 +717,16 @@ p.contact-detail {
   border-radius: 8px;
   box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.3);
 }
+
 @media (max-width: 480px) {
   .contact__content {
     width: 100%;
     height: 100%;
   }
 }
+
 .contact__item:not(:last-child) {
   margin-bottom: 2rem;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
