@@ -10,6 +10,9 @@
     @include breakpoint(mobile) {
       grid-template-columns: repeat(1, 1fr);
     }
+    @include breakpoint(lowResTablet) {
+      grid-template-columns: repeat(1, 1fr);
+    }
 
     &-item {
       box-shadow: $boxShadow;

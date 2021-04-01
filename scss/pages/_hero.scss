@@ -30,6 +30,15 @@
       content: none;
     }
   }
+  @include breakpoint(lowResTablet) {
+    padding: 6rem 0 3rem;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
+    &::before {
+      content: none;
+    }
+  }
   @include breakpoint(tablet) {
     padding: 6rem 0 3rem;
     justify-content: flex-start;
@@ -56,6 +65,18 @@
       margin: 1rem 0;
     }
     @include breakpoint(mobile) {
+      position: static;
+      order: 2;
+      margin-top: 1rem;
+      h1 {
+        font-size: 1.75rem;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    }
+    @include breakpoint(lowResTablet) {
       position: static;
       order: 2;
       margin-top: 1rem;
@@ -129,6 +150,9 @@
     @include breakpoint(mobile) {
       width: 100%;
     }
+    @include breakpoint(lowResTablet) {
+      width: 100%;
+    }
   }
   &__image {
     position: absolute;
@@ -142,7 +166,12 @@
       position: static;
       height: 300px;
       width: 300px;
-
+      order: 1;
+    }
+    @include breakpoint(lowResTablet) {
+      position: static;
+      height: 300px;
+      width: 300px;
       order: 1;
     }
     @include breakpoint(tablet) {

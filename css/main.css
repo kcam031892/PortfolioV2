@@ -153,7 +153,7 @@ p.contact-detail {
   text-align: center;
   font-size: 1.25rem;
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
   .footer__heading {
     font-size: 1rem;
   }
@@ -217,7 +217,7 @@ p.contact-detail {
 .section-title.text-light {
   color: #eee;
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
   .section-title {
     font-size: 1.75rem;
   }
@@ -279,7 +279,18 @@ p.contact-detail {
   -webkit-clip-path: polygon(100% 25.5%, 0 97%, 0% 100%, 100% 100%);
           clip-path: polygon(100% 25.5%, 0 97%, 0% 100%, 100% 100%);
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
+  .hero {
+    padding: 6rem 0 3rem;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
+  }
+  .hero::before {
+    content: none;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
   .hero {
     padding: 6rem 0 3rem;
     justify-content: flex-start;
@@ -319,7 +330,21 @@ p.contact-detail {
   color: #eee;
   margin: 1rem 0;
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
+  .hero__content {
+    position: static;
+    order: 2;
+    margin-top: 1rem;
+  }
+  .hero__content h1 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+  .hero__content p {
+    text-align: center;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
   .hero__content {
     position: static;
     order: 2;
@@ -385,7 +410,12 @@ p.contact-detail {
 .hero__ctx:focus::before {
   width: 100%;
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
+  .hero__ctx {
+    width: 100%;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
   .hero__ctx {
     width: 100%;
   }
@@ -398,7 +428,15 @@ p.contact-detail {
   width: 18.75rem;
   z-index: -1;
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
+  .hero__image {
+    position: static;
+    height: 300px;
+    width: 300px;
+    order: 1;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
   .hero__image {
     position: static;
     height: 300px;
@@ -424,7 +462,7 @@ p.contact-detail {
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
   .hero__social {
     left: -10px;
   }
@@ -453,9 +491,14 @@ p.contact-detail {
   gap: 1rem;
   padding: 1rem 0;
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
   .services .grid {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .services .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .services .grid-item {
@@ -495,9 +538,14 @@ p.contact-detail {
   grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
   .skills .grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .skills .grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .skills .grid button {
@@ -524,7 +572,12 @@ p.contact-detail {
   gap: 1rem;
   padding: 1rem 0;
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
+  .works .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
   .works .grid {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -575,7 +628,7 @@ p.contact-detail {
   border-radius: 8px;
   box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.3);
 }
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 480px) {
   .contact__content {
     width: 100%;
     height: 100%;
