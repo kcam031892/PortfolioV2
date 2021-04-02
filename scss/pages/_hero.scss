@@ -1,6 +1,6 @@
 @use './../abstracts/' as *;
 .hero {
-  background: url('/images/bubbles.svg') no-repeat center center/cover,
+  background: url('./../images/bubbles.svg') no-repeat center center/cover,
     linear-gradient(45deg, $primaryColor, $primaryColorLighten);
   position: relative;
   width: 100%;
@@ -193,18 +193,63 @@
     justify-content: center;
     align-items: center;
     @include breakpoint(mobile) {
-      left: -10px;
+      position: static;
+      order: 4;
+      flex-direction: row;
+      margin-top: 1rem;
+    }
+    @include breakpoint(lowResTablet) {
+      position: static;
+      order: 4;
+      flex-direction: row;
+      margin-top: 1rem;
+    }
+  }
+  &__list {
+    @include breakpoint(mobile) {
+      display: flex;
+      gap: 1rem;
+    }
+    @include breakpoint(lowResTablet) {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+  &__item {
+    height: 45px;
+    width: 45px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &:hover,
+    &:active {
+      &.facebook {
+        background: $facebookColor;
+      }
+      &.instagram {
+        background: $instagramColor;
+      }
+      &.linkedin {
+        background: $linkedinColor;
+      }
+      &.github {
+        background: $githubColor;
+      }
+
+      i {
+        color: #fff;
+      }
     }
   }
   &__link {
     outline: none;
+
     i {
       transition: all 0.1s ease-in-out;
-
-      &:hover {
-        transform: $animateScale;
-        color: $secondaryColor;
-      }
     }
   }
   &__item {
@@ -214,8 +259,8 @@
   }
   &__link {
     i {
-      color: $lightColor;
-      font-size: rem(26);
+      font-size: rem(24);
+      color: $darkColor;
     }
   }
 }
